@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { ListElement } from '../ListElement/ListElement';
 import { useEffect } from 'react';
 
@@ -35,14 +35,18 @@ export const List = ({ items, filter, sort, deleter, setCounter }) => {
   );
 };
 
-// List.propTypes = {
-//   items: PropTypes.arrayOf(
-//     PropTypes.exact({
-//       id: PropTypes.string.isRequired,
-//       name: PropTypes.string.isRequired,
-//       number: PropTypes.string.isRequired,
-//     })
-//   ),
-//   filter: PropTypes.string.isRequired,
-//   deleter: PropTypes.func.isRequired,
-// };
+List.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      rooms: PropTypes.number.isRequired,
+      price: PropTypes.number.isRequired,
+      description: PropTypes.string,
+    })
+  ),
+  filter: PropTypes.string.isRequired,
+  deleter: PropTypes.func.isRequired,
+  sort: PropTypes.string,
+  setCounter: PropTypes.func.isRequired,
+};

@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import { StyledFilterDiv } from './StyledFilter';
 
@@ -27,7 +27,9 @@ export const Filter = ({ onChange, onSortChange, value, selectValue }) => {
   );
 };
 
-// Filter.propTypes = {
-//   value: PropTypes.string,
-//   onChange: PropTypes.func.isRequired,
-// };
+Filter.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onSortChange: PropTypes.func.isRequired,
+  selectValue: PropTypes.string.isRequired,
+};

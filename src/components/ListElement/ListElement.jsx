@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { StyledLi } from './StyledListElement';
 
 export const ListElement = ({ deleter, apartment }) => {
@@ -14,11 +14,13 @@ export const ListElement = ({ deleter, apartment }) => {
   );
 };
 
-// ListElement.propTypes = {
-//   deleter: PropTypes.func.isRequired,
-//   contact: PropTypes.exact({
-//     id: PropTypes.string.isRequired,
-//     name: PropTypes.string.isRequired,
-//     number: PropTypes.string.isRequired,
-//   }),
-// };
+ListElement.propTypes = {
+  deleter: PropTypes.func.isRequired,
+  apartment: PropTypes.exact({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    rooms: PropTypes.number.isRequired,
+    price: PropTypes.number.isRequired,
+    description: PropTypes.string,
+  }),
+};
