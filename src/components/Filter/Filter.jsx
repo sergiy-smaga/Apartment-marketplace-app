@@ -1,28 +1,30 @@
 import PropTypes from 'prop-types';
-import { nanoid } from 'nanoid';
 import { StyledFilterDiv } from './StyledFilter';
+import { Input } from 'components/Input/Input';
+import { DropDown } from 'components/DropDown/DropDown';
 
-const filterId = nanoid();
-const selectId = nanoid();
+const dropDownOptions = [
+  { value: '', text: 'No sorting' },
+  { value: 'asc', text: 'Price - lowest to highest' },
+  { value: 'desc', text: 'Price - highest to lowest' },
+];
 
 export const Filter = ({ onChange, onSortChange, value, selectValue }) => {
   return (
     <StyledFilterDiv>
-      <label htmlFor={filterId}>Filter by rooms number</label>
-      <input
+      <Input
+        label="Filter by rooms number"
         onChange={onChange}
-        id={filterId}
-        type="number"
         value={value}
+        type="number"
         name="filter"
       />
-
-      <label htmlFor={selectId}>Sort by</label>
-      <select value={selectValue} id={selectId} onChange={onSortChange}>
-        <option value="">No sorting</option>
-        <option value="asc">Price - lowest to highest</option>
-        <option value="desc">Price - highest to lowest</option>
-      </select>
+      <DropDown
+        options={dropDownOptions}
+        label="Sort by"
+        onChange={onSortChange}
+        value={selectValue}
+      />
     </StyledFilterDiv>
   );
 };

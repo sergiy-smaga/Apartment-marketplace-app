@@ -47,7 +47,6 @@ export const App = () => {
       <h1>Apartment Marketplace</h1>
       <Subtitle text="Create a new rent" />
       <Form onSubmit={handleFormData} />
-      {/* <h2>Your current rent</h2> */}
       <Subtitle text="Available apartments" counter={counter} />
       <Filter
         value={filter}
@@ -56,6 +55,7 @@ export const App = () => {
         selectValue={sort}
       />
       <List
+        heading="Apartment name / Number of  rooms / Price / Description"
         setCounter={setCounter}
         items={apartments}
         filter={filter}

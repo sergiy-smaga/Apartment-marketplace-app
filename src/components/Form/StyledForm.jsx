@@ -7,20 +7,4 @@ export const StyledForm = styled.form`
   margin-bottom: 20px;
   border-radius: 5px;
   padding: 15px;
-  label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  input {
-    display: block;
-    margin-bottom: 10px;
-  }
-  button {
-    display: block;
-    margin-bottom: 10px;
-    cursor: pointer;
-    :hover {
-      background-color: coral;
-    }
-  }
 `;

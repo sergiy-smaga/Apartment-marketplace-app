@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { ListElement } from '../ListElement/ListElement';
 import { useEffect } from 'react';
 
-export const List = ({ items, filter, sort, deleter, setCounter }) => {
+export const List = ({ heading, items, filter, sort, deleter, setCounter }) => {
   const filteredItems = items.filter(item => {
     return !filter || Number(item.rooms) === Number(filter);
   });
@@ -23,19 +23,23 @@ export const List = ({ items, filter, sort, deleter, setCounter }) => {
   }, [filteredItems, setCounter]);
 
   return (
-    <ul>
-      {sortedItems.map(apartment => (
-        <ListElement
-          deleter={deleter}
-          key={apartment.id}
-          apartment={apartment}
-        />
-      ))}
-    </ul>
+    <>
+      <h3>{heading}</h3>
+      <ul>
+        {sortedItems.map(apartment => (
+          <ListElement
+            deleter={deleter}
+            key={apartment.id}
+            apartment={apartment}
+          />
+        ))}
+      </ul>
+    </>
   );
 };
 
 List.propTypes = {
+  heading: PropTypes.string.isRequired,
   items: PropTypes.arrayOf(
     PropTypes.exact({
       id: PropTypes.string.isRequired,

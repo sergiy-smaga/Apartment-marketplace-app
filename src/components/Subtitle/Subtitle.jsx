@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 export const Subtitle = ({ text, counter }) => {
   return (
     <StyledSubtitle>
-      {text} ({counter})
+      {text}
+      {counter && ` (${counter})`}
     </StyledSubtitle>
   );
 };

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
-import { nanoid } from 'nanoid';
 import { StyledForm } from './StyledForm';
+import { Input } from 'components/Input/Input';
+import { Button } from 'components/Button/Button';
 
 import { useFormik } from 'formik';
 
@@ -32,11 +33,6 @@ const validate = values => {
 };
 
 export const Form = ({ onSubmit }) => {
-  const nameId = nanoid();
-  const roomsId = nanoid();
-  const priceId = nanoid();
-  const descriptionId = nanoid();
-
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -53,70 +49,50 @@ export const Form = ({ onSubmit }) => {
 
   return (
     <StyledForm onSubmit={formik.handleSubmit}>
-      <div>
-        <label htmlFor={nameId}>Apartment name</label>
-        <input
-          onChange={formik.handleChange}
-          id={nameId}
-          value={formik.values.name}
-          type="text"
-          name="name"
-          required
-          onBlur={formik.handleBlur}
-        />
-        {formik.touched.name && formik.errors.name ? (
-          <div>{formik.errors.name}</div>
-        ) : null}
-      </div>
-
-      <div>
-        <label htmlFor={roomsId}>Number of rooms</label>
-        <input
-          onChange={formik.handleChange}
-          id={roomsId}
-          type="number"
-          value={formik.values.rooms}
-          name="rooms"
-          required
-          onBlur={formik.handleBlur}
-        />
-        {formik.touched.rooms && formik.errors.rooms ? (
-          <div>{formik.errors.rooms}</div>
-        ) : null}
-      </div>
-
-      <div>
-        <label htmlFor={priceId}>Price</label>
-        <input
-          onChange={formik.handleChange}
-          id={priceId}
-          type="number"
-          value={formik.values.price}
-          name="price"
-          required
-          onBlur={formik.handleBlur}
-        />
-        {formik.touched.price && formik.errors.price ? (
-          <div>{formik.errors.price}</div>
-        ) : null}
-      </div>
-
-      <div>
-        <label htmlFor={descriptionId}>Description</label>
-        <input
-          onChange={formik.handleChange}
-          id={descriptionId}
-          type="text"
-          value={formik.values.description}
-          name="description"
-          onBlur={formik.handleBlur}
-        />
-        {formik.touched.description && formik.errors.description ? (
-          <div>{formik.errors.description}</div>
-        ) : null}
-      </div>
-
-      <button type="submit">Add apartment</button>
+      <Input
+        label="Apartment name"
+        onChange={formik.handleChange}
+        value={formik.values.name}
+        type="text"
+        name="name"
+        required
+        onBlur={formik.handleBlur}
+        isTouched={formik.touched.name}
+        error={formik.errors.name}
+      />
+      <Input
+        label="Number of rooms"
+        onChange={formik.handleChange}
+        value={formik.values.rooms}
+        type="number"
+        name="rooms"
+        required
+        onBlur={formik.handleBlur}
+        isTouched={formik.touched.rooms}
+        error={formik.errors.rooms}
+      />
+      <Input
+        label="Price"
+        onChange={formik.handleChange}
+        value={formik.values.price}
+        type="number"
+        name="price"
+        required
+        onBlur={formik.handleBlur}
+        isTouched={formik.touched.price}
+        error={formik.errors.price}
+      />
+      <Input
+        label="Description"
+        onChange={formik.handleChange}
+        value={formik.values.description}
+        type="text"
+        name="description"
+        onBlur={formik.handleBlur}
+        isTouched={formik.touched.description}
+        error={formik.errors.description}
+      />
+      <Button text="Add apartment" type="submit" />
     </StyledForm>
   );
 };

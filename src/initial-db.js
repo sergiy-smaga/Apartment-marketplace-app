@@ -27,18 +27,4 @@ export const testingApartments = [
     price: 1500,
     description: 'the nearest to the center',
   },
-  {
-    id: 'id-5',
-    name: 'Europe',
-    rooms: 1,
-    price: 2500,
-    description: 'no pets allowed',
-  },
-  {
-    id: 'id-6',
-    name: 'Madonna',
-    rooms: 3,
-    price: 3500,
-    description: 'just after renovation',
-  },
 ];
