@@ -5,7 +5,7 @@ export const Subtitle = ({ text, counter }) => {
   return (
     <StyledSubtitle>
       {text}
-      {counter && ` (${counter})`}
+      {counter ? ` (${counter})` : ` (no one available)`}
     </StyledSubtitle>
   );
 };

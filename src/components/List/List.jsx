@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { ListElement } from '../ListElement/ListElement';
 import { useEffect } from 'react';
+import { StyledHeading, StyledList } from './StyledList';
 
 export const List = ({ heading, items, filter, sort, deleter, setCounter }) => {
   const filteredItems = items.filter(item => {
@@ -24,8 +25,8 @@ export const List = ({ heading, items, filter, sort, deleter, setCounter }) => {
 
   return (
     <>
-      <h3>{heading}</h3>
-      <ul>
+      <StyledHeading>{heading}</StyledHeading>
+      <StyledList>
         {sortedItems.map(apartment => (
           <ListElement
             deleter={deleter}
@@ -33,7 +34,7 @@ export const List = ({ heading, items, filter, sort, deleter, setCounter }) => {
             apartment={apartment}
           />
         ))}
-      </ul>
+      </StyledList>
     </>
   );
 };

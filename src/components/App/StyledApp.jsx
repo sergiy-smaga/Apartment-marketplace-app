@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 export const StyledApp = styled.div`
-  display: block;
   border-radius: 10px;
-  max-width: 90%;
-  font-size: 18px;
+  max-width: 70%;
+  font-size: 16px;
   color: #010101;
-  background-color: lightcoral;
   margin: 50px auto;
-  padding: 15px;
+  padding: 50px 20px;
+  h1 {
+    font-size: 28px;
+  }
 `;

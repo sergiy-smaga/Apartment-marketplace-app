@@ -7,6 +7,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #e5dcc3;
+  box-sizing: border-box;
 }
 
 code {
@@ -21,7 +23,7 @@ p {
   margin: 0;
 }
 h1,
-h2 {
-  text-align: center;
+h2,
+h3 {
   margin-bottom: 20px;
 }
